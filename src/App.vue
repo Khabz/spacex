@@ -15,9 +15,4 @@ export default {
 };
 </script>
 
-<style>
-#app {
-  background: whitesmoke;
-}
-
-</style>
+<style></style>

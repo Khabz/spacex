@@ -21,24 +21,41 @@
 
                   <div class="row">
                     <div class="col-md-6 col-12 mt-4">
-                      <div v-if="nextLaunch.launch_success != true" class="media align-items-center">
+                      <div
+                        v-if="nextLaunch.launch_success != true"
+                        class="media align-items-center"
+                      >
                         <div
                           class="icon text-center rounded-circle h4 text-primary mr-2 mb-0"
                         >
-                          <img alt="Cancel icon" src="https://img.icons8.com/bubbles/2x/cancel.png" lazy="loaded" style="height: 64px; width: 64px;">
+                          <img
+                            alt="Cancel icon"
+                            src="https://img.icons8.com/bubbles/2x/cancel.png"
+                            lazy="loaded"
+                            style="height: 64px; width: 64px;"
+                          />
                         </div>
                         <div class="media-body">
-                          <h6 class="title text-dark mb-0">Launch Was Unsuccessful</h6>
+                          <h6 class="title text-dark mb-0">
+                            Launch Was Unsuccessful
+                          </h6>
                         </div>
                       </div>
                       <div v-else class="media align-items-center">
                         <div
                           class="icon text-center rounded-circle h4 text-primary mr-2 mb-0"
                         >
-                          <img alt="Launch Rocket icon" src="https://img.icons8.com/cotton/2x/launch-rocket.png" lazy="loaded" style="height: 64px; width: 64px;">
+                          <img
+                            alt="Launch Rocket icon"
+                            src="https://img.icons8.com/cotton/2x/launch-rocket.png"
+                            lazy="loaded"
+                            style="height: 54px; width: 54px;"
+                          />
                         </div>
                         <div class="media-body">
-                          <h6 class="title text-dark mb-0">Launch Was Successful</h6>
+                          <h6 class="title text-dark mb-0">
+                            Launch Was Successful
+                          </h6>
                         </div>
                       </div>
                     </div>
@@ -103,7 +120,7 @@ export default {
   mounted() {
     axios.get(`${constants.api_url}/launches/latest`).then(res => {
       this.nextLaunch = res.data;
-      this.endAt = new Date( res.data.launch_date_unix)
+      this.endAt = new Date(res.data.launch_date_unix);
     });
   }
 };
