@@ -24,7 +24,8 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-          >Vehicles</a>
+            >Vehicles</a
+          >
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/rockets">Rockets</a>
             <a class="dropdown-item" href="#">Caspule</a>
@@ -48,5 +49,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
