@@ -10907,7 +10907,6 @@ a.text-dark:focus {
 
 .navbar {
     font-size: 0.765625rem;
-    text-transform: uppercase;
     font-weight: 600
 }
 
@@ -10942,7 +10941,6 @@ a.text-dark:focus {
 
 .btn {
     font-size: 0.765625rem;
-    text-transform: uppercase
 }
 
 .btn-sm,

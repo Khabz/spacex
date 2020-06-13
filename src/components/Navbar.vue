@@ -1,31 +1,45 @@
 <template>
-  <div class="container-fluid pt-3">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="/">SpaceX Go</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarColor01"
-        aria-controls="navbarColor01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">spaceXstats</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarColor01"
+      aria-controls="navbarColor01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/vehicles">Vehicles </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Ships</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Vehicles</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/rockets">Rockets</a>
+            <a class="dropdown-item" href="#">Caspule</a>
+            <a class="dropdown-item" href="#">Ships</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Missions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Launches</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </template>
 
 <script>
@@ -35,7 +49,4 @@ export default {
 </script>
 
 <style scoped>
-.navbar {
-  border-radius: 5px;
-}
 </style>
