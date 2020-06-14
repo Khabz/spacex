@@ -59,7 +59,7 @@
                   <!--end row-->
 
                   <div class="mt-4">
-                    <a href="javascript:void(0)" class="btn btn-primary"
+                    <a href="/next-launch" class="btn btn-primary"
                       >More Details
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
