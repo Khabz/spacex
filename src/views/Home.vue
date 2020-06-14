@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home mb-5">
     <div v-if="nextLaunch != null" class="container-fluid mt-5 mt-60">
       <div
         class="rounded py-5"

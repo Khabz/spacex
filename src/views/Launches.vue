@@ -15,7 +15,9 @@
 
           <div class="col-md-4 col-12 mt-5 mt-sm-0">
             <div class="features text-center">
-              <h1 class="title text-success">{{ successfulLaunches.length }}</h1>
+              <h1 class="title text-success">
+                {{ successfulLaunches.length }}
+              </h1>
               <div class="content mt-4">
                 <h4 class="title-2 text-success">Successful Launches</h4>
               </div>
@@ -25,7 +27,9 @@
 
           <div class="col-md-4 col-12 mt-5 mt-sm-0">
             <div class="features text-center">
-              <h1 class="title text-danger">{{ unsuccessfulLaunches.length }}</h1>
+              <h1 class="title text-danger">
+                {{ unsuccessfulLaunches.length }}
+              </h1>
               <div class="content mt-4">
                 <h4 class="title-2 text-danger">Unsuccessful Launches</h4>
               </div>
@@ -37,16 +41,22 @@
       <div class="container mt-5">
         <div class="row">
           <div class="form-group col-md-6">
-            <input placeholder="Search Launch By Name" class="form-control" type="text">
+            <input
+              placeholder="Search Launch By Name"
+              class="form-control"
+              type="text"
+            />
           </div>
-        <div class="form-group col-md-6" @change="onChangeLaunches($event)">
-          <select  class="form-control">
-            <option>Filter Launches</option>
-            <option value="allLaunches">Total Launches</option>
-            <option value="successfulLaunches">Successful Launches</option>
-            <option value="unsuccessfulLaunches">Unsuccessful Launches</option>
-          </select>
-        </div>
+          <div class="form-group col-md-6" @change="onChangeLaunches($event)">
+            <select class="form-control">
+              <option>Filter Launches</option>
+              <option value="allLaunches">Total Launches</option>
+              <option value="successfulLaunches">Successful Launches</option>
+              <option value="unsuccessfulLaunches"
+                >Unsuccessful Launches</option
+              >
+            </select>
+          </div>
         </div>
         <div class="row justify-content-center mt-4">
           <div class="col-12">
@@ -55,25 +65,33 @@
             </div>
           </div>
           <div class="row">
-        <a
-          v-for="(launch, index) in sortedLaunches"
-          :key="index"
-          @click="getMission(launch)"
-          class="col-lg-6 col-md-6 pt-2"
-        >
-          <div class="media key-feature align-items-center p-3 rounded shadow">
-            <div
-              class="icon text-center rounded-circle h4 text-primary mr-3 mb-0"
+            <a
+              v-for="(launch, index) in sortedLaunches"
+              :key="index"
+              @click="getMission(launch)"
+              class="col-lg-6 col-md-6 pt-2"
             >
-              <img width="32" height="32" src="https://image.flaticon.com/icons/svg/3062/3062299.svg">
-            </div>
-            <div class="media-body">
-              <h4 class="title text-dark mb-0">{{ launch.mission_name }}</h4>
-            </div>
-            <p class="small">Click to Read More</p>
+              <div
+                class="media key-feature align-items-center p-3 rounded shadow"
+              >
+                <div
+                  class="icon text-center rounded-circle h4 text-primary mr-3 mb-0"
+                >
+                  <img
+                    width="32"
+                    height="32"
+                    src="https://image.flaticon.com/icons/svg/3062/3062299.svg"
+                  />
+                </div>
+                <div class="media-body">
+                  <h4 class="title text-dark mb-0">
+                    {{ launch.mission_name }}
+                  </h4>
+                </div>
+                <p class="small">Click to Read More</p>
+              </div>
+            </a>
           </div>
-        </a>
-      </div>
         </div>
       </div>
     </div>

@@ -39,6 +39,16 @@
           <a class="nav-link" href="/launches">Launches</a>
         </li>
       </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/missions">Project Timeline</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/khabz" target="_blank">
+            Github Repo
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
 </template>
@@ -49,5 +59,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
