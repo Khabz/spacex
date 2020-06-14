@@ -28,7 +28,7 @@
           >
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/rockets">Rockets</a>
-            <a class="dropdown-item" href="#">Caspule</a>
+            <a class="dropdown-item" href="/dragons">Dragons</a>
             <a class="dropdown-item" href="#">Ships</a>
           </div>
         </li>

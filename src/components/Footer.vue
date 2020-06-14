@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer bg-primary">
+  <footer class="footer mt-5 bg-primary">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
@@ -160,3 +160,5 @@ export default {
   name: "Footer"
 };
 </script>
+
+<style></style>
