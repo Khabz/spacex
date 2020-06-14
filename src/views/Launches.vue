@@ -1,19 +1,19 @@
 <template>
-  <div class="launches">
+  <div class="launches mb-3">
     <div v-if="allLaunches != null" class="section overflow-hidden">
       <div class="container mt-5 mt-60">
         <div class="row">
-          <div class="col-md-4 col-12">
+          <div class="col-md-3 col-12">
             <div class="features text-center">
-              <h1 class="title text-info">{{ allLaunches.length }}</h1>
+              <h1 class="title">{{ allLaunches.length }}</h1>
               <div class="content mt-4">
-                <h4 class="title-2 text-info">Total Launches</h4>
+                <h4 class="title-2">Total Launches</h4>
               </div>
             </div>
           </div>
           <!--end col-->
 
-          <div class="col-md-4 col-12 mt-5 mt-sm-0">
+          <div class="col-md-3 col-12 mt-5 mt-sm-0">
             <div class="features text-center">
               <h1 class="title text-success">
                 {{ successfulLaunches.length }}
@@ -25,7 +25,7 @@
           </div>
           <!--end col-->
 
-          <div class="col-md-4 col-12 mt-5 mt-sm-0">
+          <div class="col-md-3 col-12 mt-5 mt-sm-0">
             <div class="features text-center">
               <h1 class="title text-danger">
                 {{ unsuccessfulLaunches.length }}
@@ -36,6 +36,16 @@
             </div>
           </div>
           <!--end col-->
+          <div class="col-md-3 col-12 mt-5 mt-sm-0">
+            <div class="features text-center text-info">
+              <h1 class="title">
+                {{ upcoming.length }}
+              </h1>
+              <div class="content mt-4">
+                <h4 class="title-2">Upcoming Launches</h4>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="container mt-5">
@@ -55,6 +65,9 @@
               <option value="unsuccessfulLaunches"
                 >Unsuccessful Launches</option
               >
+              <option value="upcoming"
+                >Upcoming Launches</option
+              >
             </select>
           </div>
         </div>
@@ -62,6 +75,7 @@
           <div class="col-12">
             <div class="section-title mb-4 pb-2">
               <h4 class="title mb-4">Results</h4>
+              <p v-if="sortedLaunches != null" class="lead">{{ sortedLaunches.length }} launches found</p>
             </div>
           </div>
           <div class="row">
@@ -112,7 +126,8 @@ export default {
       allLaunches: null,
       successfulLaunches: [],
       unsuccessfulLaunches: [],
-      sortedLaunches: []
+      sortedLaunches: null,
+      upcoming: null
     };
   },
   methods: {
@@ -121,14 +136,19 @@ export default {
         this.allLaunches = res.data;
       });
     },
+    upcomingLaunches() {
+      axios.get("https://api.spacexdata.com/v3/launches/upcoming").then(res => {
+        this.upcoming = res.data
+      })
+    },
     unSuccessfulLauches() {
       axios.get("https://api.spacexdata.com/v3/launches").then(res => {
         this.allLaunches = res.data;
         let allLaunches = this.allLaunches;
         allLaunches.forEach(item => {
-          if (item.launch_success != false) {
+          if (item.launch_success == true) {
             this.successfulLaunches.push(item);
-          } else {
+          } else if (item.launch_success == false) {
             this.unsuccessfulLaunches.push(item);
           }
         });
@@ -137,6 +157,7 @@ export default {
     onChangeLaunches(event) {
       this.sortedLaunches = [];
       let launches = event.target.value;
+      console.log(launches)
       if (launches == "allLaunches") {
         axios.get("https://api.spacexdata.com/v3/launches").then(res => {
           this.sortedLaunches = res.data;
@@ -146,17 +167,31 @@ export default {
         axios.get("https://api.spacexdata.com/v3/launches").then(res => {
           let allLaunches = res.data;
           allLaunches.forEach(item => {
-            if (item.launch_success != false) {
+            if (item.launch_success == true) {
               this.sortedLaunches.push(item);
             }
           });
         });
+      }
+      if (launches == "unsuccessfulLaunches") {
+        axios.get("https://api.spacexdata.com/v3/launches").then(res => {
+          let allLaunches = res.data;
+          allLaunches.forEach(item => {
+            if (item.launch_success == false) {
+              this.sortedLaunches.push(item);
+            }
+          });
+        });
+      }
+      if(launches == "upcoming") {
+        this.sortedLaunches = this.upcoming
       }
     }
   },
   mounted() {
     this.getAllLaunches();
     this.unSuccessfulLauches();
+    this.upcomingLaunches();
   }
 };
 </script>

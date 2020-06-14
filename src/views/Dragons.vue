@@ -71,6 +71,11 @@
         </div>
       </div>
     </div>
+    <div v-else class="container">
+      <div class>
+        <img class="loader" src="img/images/loader.gif" alt srcset />
+      </div>
+    </div>
   </div>
 </template>
 
