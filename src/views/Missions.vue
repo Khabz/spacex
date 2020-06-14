@@ -14,7 +14,7 @@
         <a
           v-for="mission in missions"
           :key="mission.mission_id"
-          @click="getRocket(mission.mission_id)"
+          @click="getMission(mission)"
           class="col-lg-12 col-md-6 pt-2"
         >
           <div class="media key-feature align-items-center p-3 rounded shadow">
@@ -34,6 +34,7 @@
         </a>
       </div>
       <!--end row-->
+      <Mission :mission="selectedMission" />
     </div>
     <div v-else class="container">
         <div class="">
@@ -44,13 +45,25 @@
 </template>
 
 <script>
+import Mission from '../components/Mission'
 import axios from "axios";
 export default {
   name: "Missions",
   data() {
     return {
-      missions: null
+      missions: null,
+      selectedMission: null
     };
+  },
+  components: {
+      Mission
+  },
+  methods: {
+      getMission(val) {
+          this.selectedMission = null
+          this.selectedMission = val
+          window.$("#misson-modal").modal("show")
+      }
   },
   mounted() {
     axios
