@@ -11,55 +11,50 @@
               <div class="card border-0">
                 <div class="card-body p-md-5 p-4 bg-white rounded">
                   <div class="section-title">
-                    <h4 class="title mb-4">Latest Launch</h4>
-                    <p class="lead">{{ nextLaunch.mission_name }}</p>
+                    <h4 class="title mb-4">Next Launch</h4>
+                    <vue-countdown-timer
+                      @start_callback="startCallBack('event started')"
+                      @end_callback="endCallBack('event ended')"
+                      :start-time="startAt"
+                      :end-time="endAt"
+                      :interval="1000"
+                      label-position="begin"
+                      :day-txt="'days'"
+                      :hour-txt="'hrs'"
+                      :minutes-txt="'mins'"
+                      :seconds-txt="'secs'"
+                    >
+                      <template slot="countdown" slot-scope="scope">
+                        <div class="row">
+                          <div class="col-3">
+                            <h4>{{ scope.props.days }}</h4>
+                            <span class="h5">{{ scope.props.dayTxt }}</span>
+                          </div>
+                          <div class="col-3">
+                            <h4>{{ scope.props.hours }}</h4>
+                            <span class="h5">{{ scope.props.hourTxt }}</span>
+                          </div>
+                          <div class="col-3">
+                            <h4>{{ scope.props.minutes }}</h4>
+                            <span class="h5">{{ scope.props.minutesTxt }}</span>
+                          </div>
+                          <div class="col-3">
+                            <h4>{{ scope.props.seconds }}</h4>
+                            <span class="h5">{{ scope.props.secondsTxt }}</span>
+                          </div>
+                        </div>
+                      </template>
+                    </vue-countdown-timer>
+                    <p class="h5 mt-4">{{ nextLaunch.mission_name }}</p>
+                    <p class="h6">
+                      Flight #<span class="text-info">{{
+                        nextLaunch.flight_number
+                      }}</span>
+                    </p>
                     <hr />
                     <p class="text-muted para-desc mb-0 mt-1">
                       {{ nextLaunch.details }}
                     </p>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-md-6 col-12 mt-4">
-                      <div
-                        v-if="nextLaunch.launch_success != true"
-                        class="media align-items-center"
-                      >
-                        <div
-                          class="icon text-center rounded-circle h4 text-primary mr-2 mb-0"
-                        >
-                          <img
-                            alt="Cancel icon"
-                            src="https://img.icons8.com/bubbles/2x/cancel.png"
-                            lazy="loaded"
-                            style="height: 64px; width: 64px;"
-                          />
-                        </div>
-                        <div class="media-body">
-                          <h6 class="title text-dark mb-0">
-                            Launch Was Unsuccessful
-                          </h6>
-                        </div>
-                      </div>
-                      <div v-else class="media align-items-center">
-                        <div
-                          class="icon text-center rounded-circle h4 text-primary mr-2 mb-0"
-                        >
-                          <img
-                            alt="Launch Rocket icon"
-                            src="https://img.icons8.com/cotton/2x/launch-rocket.png"
-                            lazy="loaded"
-                            style="height: 54px; width: 54px;"
-                          />
-                        </div>
-                        <div class="media-body">
-                          <h6 class="title text-dark mb-0">
-                            Launch Was Successful
-                          </h6>
-                        </div>
-                      </div>
-                    </div>
-                    <!--end col-->
                   </div>
                   <!--end row-->
 
@@ -104,7 +99,6 @@
 
 <script>
 import axios from "axios";
-import constants from "../config/constants";
 export default {
   name: "Home",
   data() {
@@ -123,9 +117,9 @@ export default {
     }
   },
   mounted() {
-    axios.get(`${constants.api_url}/launches/latest`).then(res => {
+    axios.get("https://api.spacexdata.com/v3/launches/next").then(res => {
       this.nextLaunch = res.data;
-      this.endAt = new Date(res.data.launch_date_unix);
+      this.endAt = res.data.launch_date_unix;
     });
   }
 };

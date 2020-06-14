@@ -65,9 +65,7 @@
               <option value="unsuccessfulLaunches"
                 >Unsuccessful Launches</option
               >
-              <option value="upcoming"
-                >Upcoming Launches</option
-              >
+              <option value="upcoming">Upcoming Launches</option>
             </select>
           </div>
         </div>
@@ -75,7 +73,9 @@
           <div class="col-12">
             <div class="section-title mb-4 pb-2">
               <h4 class="title mb-4">Results</h4>
-              <p v-if="sortedLaunches != null" class="lead">{{ sortedLaunches.length }} launches found</p>
+              <p v-if="sortedLaunches != null" class="lead">
+                {{ sortedLaunches.length }} launches found
+              </p>
             </div>
           </div>
           <div class="row">
@@ -138,8 +138,8 @@ export default {
     },
     upcomingLaunches() {
       axios.get("https://api.spacexdata.com/v3/launches/upcoming").then(res => {
-        this.upcoming = res.data
-      })
+        this.upcoming = res.data;
+      });
     },
     unSuccessfulLauches() {
       axios.get("https://api.spacexdata.com/v3/launches").then(res => {
@@ -157,7 +157,7 @@ export default {
     onChangeLaunches(event) {
       this.sortedLaunches = [];
       let launches = event.target.value;
-      console.log(launches)
+      console.log(launches);
       if (launches == "allLaunches") {
         axios.get("https://api.spacexdata.com/v3/launches").then(res => {
           this.sortedLaunches = res.data;
@@ -183,8 +183,8 @@ export default {
           });
         });
       }
-      if(launches == "upcoming") {
-        this.sortedLaunches = this.upcoming
+      if (launches == "upcoming") {
+        this.sortedLaunches = this.upcoming;
       }
     }
   },

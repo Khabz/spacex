@@ -26,13 +26,19 @@
             <s class="text-danger">Sort Launches by categories</s>
           </p>
           <p class="lead">
-            <s class="text-danger">Created Dragon view, pull all dragons from rest api and populate</s>
+            <s class="text-danger"
+              >Created Dragon view, pull all dragons from rest api and
+              populate</s
+            >
           </p>
         </div>
         <div class="col-md-12">
           <h1>14 June 2020</h1>
           <p class="lead">
-            <s class="text-danger">Created Dragon view, pull all dragons from rest api and populate</s>
+            <s class="text-danger"
+              >Created Dragon view, pull all dragons from rest api and
+              populate</s
+            >
           </p>
         </div>
       </div>
