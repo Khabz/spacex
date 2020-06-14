@@ -41,12 +41,7 @@
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/missions">Project Timeline</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/khabz" target="_blank">
-            Github Repo
-          </a>
+          <a class="nav-link" href="/timeline">Project Timeline</a>
         </li>
       </ul>
     </div>
