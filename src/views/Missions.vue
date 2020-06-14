@@ -18,7 +18,9 @@
           class="col-lg-12 col-md-6 pt-2"
         >
           <div class="media key-feature align-items-center p-3 rounded shadow">
-            <div class="icon text-center rounded-circle h4 text-primary mr-3 mb-0">
+            <div
+              class="icon text-center rounded-circle h4 text-primary mr-3 mb-0"
+            >
               <img
                 alt="Astronaut icon"
                 src="https://img.icons8.com/ios/2x/astronaut.png"
@@ -37,15 +39,15 @@
       <Mission :mission="selectedMission" />
     </div>
     <div v-else class="container">
-        <div class="">
-            <img class="loader" src="img/images/loader.gif" alt="" srcset="">
-        </div>
+      <div class="">
+        <img class="loader" src="img/images/loader.gif" alt="" srcset="" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Mission from '../components/Mission'
+import Mission from "../components/Mission";
 import axios from "axios";
 export default {
   name: "Missions",
@@ -56,14 +58,14 @@ export default {
     };
   },
   components: {
-      Mission
+    Mission
   },
   methods: {
-      getMission(val) {
-          this.selectedMission = null
-          this.selectedMission = val
-          window.$("#misson-modal").modal("show")
-      }
+    getMission(val) {
+      this.selectedMission = null;
+      this.selectedMission = val;
+      window.$("#misson-modal").modal("show");
+    }
   },
   mounted() {
     axios
@@ -78,5 +80,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

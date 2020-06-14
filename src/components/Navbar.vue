@@ -36,7 +36,7 @@
           <a class="nav-link" href="/missions">Missions</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Launches</a>
+          <a class="nav-link" href="/launches">Launches</a>
         </li>
       </ul>
     </div>
@@ -49,4 +49,5 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

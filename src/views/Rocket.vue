@@ -8,7 +8,10 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <div class="card public-profile border-0 rounded shadow" style="z-index: 1;">
+              <div
+                class="card public-profile border-0 rounded shadow"
+                style="z-index: 1;"
+              >
                 <div class="card-body">
                   <div class="row align-items-center">
                     <div class="col-lg-2 col-md-3 text-md-left text-center">
@@ -22,9 +25,13 @@
 
                     <div class="col-lg-10 col-md-9">
                       <div class="row align-items-end">
-                        <div class="col-md-12 text-md-left text-center mt-4 mt-sm-0">
+                        <div
+                          class="col-md-12 text-md-left text-center mt-4 mt-sm-0"
+                        >
                           <h3 class="title mb-0">{{ rocket.rocket_name }}</h3>
-                          <small class="text-muted h6 mr-2">{{ rocket.description }}</small>
+                          <small class="text-muted h6 mr-2">{{
+                            rocket.description
+                          }}</small>
                         </div>
                         <!--end col-->
                       </div>
@@ -54,45 +61,63 @@
                       <div class="media">
                         <div class="media-body">
                           <h6 class="text-primary mb-0">Status :</h6>
-                          <p v-if="rocket.active != false" class="text-muted">Active</p>
+                          <p v-if="rocket.active != false" class="text-muted">
+                            Active
+                          </p>
                           <p v-else class="text-muted">Inactive</p>
                         </div>
                       </div>
                       <div class="media mt-3">
                         <div class="media-body">
                           <h6 class="text-primary mb-0">Cost Per Launch :</h6>
-                          <p class="text-muted">US$ {{ rocket.cost_per_launch }}</p>
+                          <p class="text-muted">
+                            US$ {{ rocket.cost_per_launch }}
+                          </p>
                         </div>
                       </div>
                       <div class="media mt-3">
                         <div class="media-body">
                           <h6 class="text-primary mb-0">Diameter :</h6>
-                          <p class="text-muted">{{ rocket.diameter.meters }} Meters</p>
+                          <p class="text-muted">
+                            {{ rocket.diameter.meters }} Meters
+                          </p>
                         </div>
                       </div>
                       <div class="media mt-3">
                         <div class="media-body">
                           <h6 class="text-primary mb-0">Height :</h6>
-                          <p class="text-muted">{{ rocket.height.meters }} Meters</p>
+                          <p class="text-muted">
+                            {{ rocket.height.meters }} Meters
+                          </p>
                         </div>
                       </div>
                       <div class="media mt-3">
                         <div class="media-body">
                           <h6 class="text-primary mb-0">Mass :</h6>
-                          <p class="text-muted">{{ rocket.mass.kg }}kg / {{ rocket.mass.lb }}lb</p>
+                          <p class="text-muted">
+                            {{ rocket.mass.kg }}kg / {{ rocket.mass.lb }}lb
+                          </p>
                         </div>
                       </div>
                       <div class="media mt-3">
                         <div class="media-body">
                           <h6 class="text-primary mb-0">Landing Legs :</h6>
-                          <p class="text-muted">Number: {{ rocket.landing_legs.number }}</p>
-                          <p class="text-muted">Material: {{ rocket.landing_legs.material }}</p>
+                          <p class="text-muted">
+                            Number: {{ rocket.landing_legs.number }}
+                          </p>
+                          <p class="text-muted">
+                            Material: {{ rocket.landing_legs.material }}
+                          </p>
                         </div>
                       </div>
                       <div class="media mt-3">
                         <div class="media-body">
-                          <h6 class="text-primary mb-0">Success Rate Percentage :</h6>
-                          <p class="text-muted">{{ rocket.success_rate_pct }}</p>
+                          <h6 class="text-primary mb-0">
+                            Success Rate Percentage :
+                          </h6>
+                          <p class="text-muted">
+                            {{ rocket.success_rate_pct }}
+                          </p>
                         </div>
                       </div>
                       <div class="media mt-3">
@@ -123,26 +148,36 @@
                       <div class="media mt-3">
                         <div class="media-body">
                           <h6 class="text-primary mb-0">Engine Loss Max :</h6>
-                          <p class="text-muted">{{ rocket.engines.engine_loss_max }}</p>
+                          <p class="text-muted">
+                            {{ rocket.engines.engine_loss_max }}
+                          </p>
                         </div>
                       </div>
                       <div class="media mt-3">
                         <div class="media-body">
                           <h6 class="text-primary mb-0">Specific Impulse :</h6>
-                          <p class="text-muted">Sea Level :{{ rocket.engines.isp.sea_level }}</p>
-                          <p class="text-muted">Vacuum :{{ rocket.engines.isp.vacuum }}</p>
+                          <p class="text-muted">
+                            Sea Level :{{ rocket.engines.isp.sea_level }}
+                          </p>
+                          <p class="text-muted">
+                            Vacuum :{{ rocket.engines.isp.vacuum }}
+                          </p>
                         </div>
                       </div>
                       <div class="media mt-3">
                         <div class="media-body">
                           <h6 class="text-primary mb-0">Propellant 1 :</h6>
-                          <p class="text-muted">{{ rocket.engines.propellant_1 }}</p>
+                          <p class="text-muted">
+                            {{ rocket.engines.propellant_1 }}
+                          </p>
                         </div>
                       </div>
                       <div class="media mt-3">
                         <div class="media-body">
                           <h6 class="text-primary mb-0">Propellant 2 :</h6>
-                          <p class="text-muted">{{ rocket.engines.propellant_2 }}</p>
+                          <p class="text-muted">
+                            {{ rocket.engines.propellant_2 }}
+                          </p>
                         </div>
                       </div>
                       <div class="media mt-3">
@@ -150,7 +185,7 @@
                           <h6 class="text-primary mb-0">Thrust Sea Level :</h6>
                           <p class="text-muted">
                             {{ rocket.engines.thrust_sea_level.kN }}kN/{{
-                            rocket.engines.thrust_sea_level.lbf
+                              rocket.engines.thrust_sea_level.lbf
                             }}lbf
                           </p>
                         </div>
@@ -158,7 +193,9 @@
                       <div class="media mt-3">
                         <div class="media-body">
                           <h6 class="text-primary mb-0">Thrust to_Weight :</h6>
-                          <p class="text-muted">{{ rocket.engines.thrust_to_weight }}</p>
+                          <p class="text-muted">
+                            {{ rocket.engines.thrust_to_weight }}
+                          </p>
                         </div>
                       </div>
                       <div class="media mt-3">
@@ -166,7 +203,7 @@
                           <h6 class="text-primary mb-0">Thrust Vacuum :</h6>
                           <p class="text-muted">
                             {{ rocket.engines.thrust_vacuum.kN }}kN/{{
-                            rocket.engines.thrust_vacuum.lbf
+                              rocket.engines.thrust_vacuum.lbf
                             }}lbf
                           </p>
                         </div>
@@ -180,7 +217,8 @@
                       <div class="widget">
                         <h5 class="widget-title">
                           Stages (
-                          <span class="text-danger">{{ rocket.stages }}</span>) :
+                          <span class="text-danger">{{ rocket.stages }}</span
+                          >) :
                         </h5>
                         <div class="progress-box mt-4">
                           <h6 class="title lead">
@@ -189,33 +227,45 @@
                           <div class="media mt-3">
                             <div class="media-body">
                               <h6 class="text-primary mb-0">Burn Time :</h6>
-                              <p class="text-muted">{{ rocket.first_stage.burn_time_sec }} seconds</p>
+                              <p class="text-muted">
+                                {{ rocket.first_stage.burn_time_sec }} seconds
+                              </p>
                             </div>
                           </div>
                           <div class="media mt-3">
                             <div class="media-body">
                               <h6 class="text-primary mb-0">Cores :</h6>
-                              <p class="text-muted">{{ rocket.first_stage.cores }}</p>
+                              <p class="text-muted">
+                                {{ rocket.first_stage.cores }}
+                              </p>
                             </div>
                           </div>
                           <div class="media mt-3">
                             <div class="media-body">
                               <h6 class="text-primary mb-0">Engines :</h6>
-                              <p class="text-muted">{{ rocket.first_stage.engines }}</p>
+                              <p class="text-muted">
+                                {{ rocket.first_stage.engines }}
+                              </p>
                             </div>
                           </div>
                           <div class="media mt-3">
                             <div class="media-body">
                               <h6 class="text-primary mb-0">Fuel Amount :</h6>
-                              <p class="text-muted">{{ rocket.first_stage.fuel_amount_tons }} tons</p>
+                              <p class="text-muted">
+                                {{ rocket.first_stage.fuel_amount_tons }} tons
+                              </p>
                             </div>
                           </div>
                           <div class="media mt-3">
                             <div class="media-body">
-                              <h6 class="text-primary mb-0">Thrust Sea Level :</h6>
+                              <h6 class="text-primary mb-0">
+                                Thrust Sea Level :
+                              </h6>
                               <p class="text-muted">
-                                {{ rocket.first_stage.thrust_sea_level.kN }}kN/{{
-                                rocket.first_stage.thrust_sea_level.lbf
+                                {{
+                                  rocket.first_stage.thrust_sea_level.kN
+                                }}kN/{{
+                                  rocket.first_stage.thrust_sea_level.lbf
                                 }}lbf
                               </p>
                             </div>
@@ -225,7 +275,7 @@
                               <h6 class="text-primary mb-0">Thrust Vacuum :</h6>
                               <p class="text-muted">
                                 {{ rocket.first_stage.thrust_vacuum.kN }}kN/{{
-                                rocket.first_stage.thrust_vacuum.lbf
+                                  rocket.first_stage.thrust_vacuum.lbf
                                 }}lbf
                               </p>
                             </div>
@@ -241,25 +291,33 @@
                           <div class="media mt-3">
                             <div class="media-body">
                               <h6 class="text-primary mb-0">Burn Time :</h6>
-                              <p class="text-muted">{{ rocket.second_stage.burn_time_sec }} seconds</p>
+                              <p class="text-muted">
+                                {{ rocket.second_stage.burn_time_sec }} seconds
+                              </p>
                             </div>
                           </div>
                           <div class="media mt-3">
                             <div class="media-body">
                               <h6 class="text-primary mb-0">Cores :</h6>
-                              <p class="text-muted">{{ rocket.second_stage.cores }}</p>
+                              <p class="text-muted">
+                                {{ rocket.second_stage.cores }}
+                              </p>
                             </div>
                           </div>
                           <div class="media mt-3">
                             <div class="media-body">
                               <h6 class="text-primary mb-0">Engines :</h6>
-                              <p class="text-muted">{{ rocket.second_stage.engines }}</p>
+                              <p class="text-muted">
+                                {{ rocket.second_stage.engines }}
+                              </p>
                             </div>
                           </div>
                           <div class="media mt-3">
                             <div class="media-body">
                               <h6 class="text-primary mb-0">Fuel Amount :</h6>
-                              <p class="text-muted">{{ rocket.second_stage.fuel_amount_tons }} tons</p>
+                              <p class="text-muted">
+                                {{ rocket.second_stage.fuel_amount_tons }} tons
+                              </p>
                             </div>
                           </div>
                           <div class="media mt-3">
@@ -267,7 +325,7 @@
                               <h6 class="text-primary mb-0">Thrust :</h6>
                               <p class="text-muted">
                                 {{ rocket.second_stage.thrust.kN }}kN/{{
-                                rocket.second_stage.thrust.lbf
+                                  rocket.second_stage.thrust.lbf
                                 }}lbf
                               </p>
                             </div>
@@ -275,7 +333,12 @@
                           <div class="media mt-3">
                             <div class="media-body">
                               <h6 class="text-primary mb-0">reusable :</h6>
-                              <p v-if="rocket.second_stage.reusable != false" class="text-muted">Yes</p>
+                              <p
+                                v-if="rocket.second_stage.reusable != false"
+                                class="text-muted"
+                              >
+                                Yes
+                              </p>
                               <p v-else class="text-muted">No</p>
                             </div>
                           </div>
@@ -297,7 +360,11 @@
                 >
                   <div class="card blog rounded border-0 shadow">
                     <div class="position-relative">
-                      <img :src="image" class="card-img-top rounded-top" alt="..." />
+                      <img
+                        :src="image"
+                        class="card-img-top rounded-top"
+                        alt="..."
+                      />
                       <div class="overlay rounded-top bg-dark"></div>
                     </div>
                   </div>
