@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <div class="container-fluid mt-5 mt-60">
+    <div v-if="nextLaunch != null" class="container-fluid mt-5 mt-60">
       <div
         class="rounded py-5"
         style="background: url('img/images/home-hero.jpg') center center;"
       >
-        <div v-if="nextLaunch != null" class="container py-md-5 py-3">
+        <div class="container py-md-5 py-3">
           <div class="row">
             <div class="col-lg-6 col-md-7 col-12 offset-lg-6 offset-md-5">
               <div class="card border-0">
@@ -93,6 +93,11 @@
         <!--end container-->
       </div>
       <!--end div-->
+    </div>
+    <div v-else class="container">
+        <div class="">
+            <img class="loader" src="img/images/loader.gif" alt="" srcset="">
+        </div>
     </div>
   </div>
 </template>
